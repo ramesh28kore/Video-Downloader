@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TurboDownload Video Detector</title></head><body>
+<h1>TurboDownload bridge</h1>
+<p>In TurboDownload Settings, enable video detection and choose <strong>Copy extension config</strong>. Paste it here, then select Connect.</p>
+<label>Copied config<br><textarea id="config" rows="3" cols="72" placeholder='{"endpoint":"http://127.0.0.1:47831/media","token":"..."}'></textarea></label><br><br>
+<button id="connect">Connect</button><br><br>
+<label>Endpoint <input id="endpoint" size="58" placeholder="http://127.0.0.1:47831/media"></label><br><br>
+<label>Token <input id="token" size="64"></label><br><br>
+<button id="save">Save manually</button><span id="status" role="status"></span>
+<script src="options.js"></script>
+</body></html>

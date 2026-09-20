@@ -1,0 +1,53 @@
+{
+  "name": "turbo-download",
+  "version": "1.0.0",
+  "description": "TurboDownload — a high-performance IDM-style desktop download manager",
+  "main": "out/main/index.js",
+  "author": "TurboDownload",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:ui": "vitest run --project ui",
+    "test:all": "vitest run",
+    "bench": "cross-env BENCH=1 vitest run --project perf",
+    "test:server": "tsx test-server/server.ts",
+    "package": "electron-builder --dir",
+    "package:win": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win",
+    "verify:sqlite": "node scripts/verify-electron-sqlite.mjs",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.14.13",
+    "lucide-react": "^1.46.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "5.1.0",
+    "cross-env": "^10.1.0",
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "jsdom": "^26.1.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "7.3.6",
+    "vitest": "^5.0.1"
+  }
+}

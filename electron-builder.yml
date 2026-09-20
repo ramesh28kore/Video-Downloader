@@ -1,0 +1,26 @@
+appId: com.turbo.download
+productName: TurboDownload
+directories:
+  buildResources: resources
+  output: release
+files:
+  - out/**
+  - package.json
+  - extension/**
+asarUnpack:
+  - '**/*.node'
+win:
+  target:
+    - nsis
+  artifactName: ${productName}-${version}-setup.${ext}
+  requestedExecutionLevel: asInvoker
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: TurboDownload
+  deleteAppDataOnUninstall: false
+npmRebuild: false
+# node:sqlite is built into Electron — there are no native deps to rebuild.
